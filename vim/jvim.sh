@@ -1,5 +1,5 @@
 #!/bin/sh
 
-cp .vim ~/
+cp -r .vim ~/
 cp .vimrc ~/
 echo done!
