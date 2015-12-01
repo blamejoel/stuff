@@ -16,3 +16,4 @@ set hlsearch
 set t_Co=256
 syntax enable
 colorscheme molokai
+hi Normal ctermbg=none
