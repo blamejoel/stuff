@@ -18,4 +18,5 @@ colorscheme molokai
 hi Normal ctermbg=none
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2 commentstring=<!--%s-->
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType c setlocal shiftwidth=2 tabstop=2 softtabstop=2
 filetype indent on
