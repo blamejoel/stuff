@@ -12,9 +12,13 @@ set number
 set showmatch
 set incsearch
 set hlsearch
-set t_Co=256
+"set t_Co=256
 syntax enable
-colorscheme molokai
+colorscheme PaperColor
+"colorscheme onedark
+"colorscheme molokai
+"colorscheme primary
+"colorscheme solarized
 hi Normal ctermbg=none
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2 commentstring=<!--%s-->
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
