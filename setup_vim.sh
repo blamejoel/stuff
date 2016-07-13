@@ -6,7 +6,7 @@ cp -r vim/.vim ~/
 echo "Checking for existing .vimrc file..."
 if [ ! -f ~/.vimrc ]; then
     VIM_RES="created!"
-    cp .vimrc ~/
+    cp vim/.vimrc ~/
 else
     VIM_RES="appended!"
     echo ".vimrc already exists!, appending new settings... check for conflicts"
