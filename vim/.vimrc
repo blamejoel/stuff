@@ -26,3 +26,15 @@ autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType c setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType json setlocal shiftwidth=2 tabstop=2 softtabstop=2
 filetype indent on
+
+" tmux stuff
+" fix for different cursors in insert/visual mode
+if exists('$ITERM_PROFILE')
+    if exists('$TMUX') 
+        let &t_SI = "\<Esc>[3 q"
+        let &t_EI = "\<Esc>[0 q"
+    else
+        let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+        let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+    endif
+end
