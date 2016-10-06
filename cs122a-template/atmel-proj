@@ -1,0 +1,52 @@
+#!/bin/bash
+if [ "$#" -ne 2 ]; then
+    LAB=""
+    PART=""
+    echo "Error: Missing lab# and part#"
+    echo "Expected usage: ./atmel-proj [lab#] [part#]"
+    exit 1
+else
+    LAB="$1"
+    PART="$2"
+fi
+NAME=""
+NETID=""
+
+if [ -z "$NAME" -o -z "$NETID" ]; then
+    echo "Run template-setup.sh first."
+    exit 1
+fi
+
+EMAIL="${NETID}@ucr.edu"
+DATE=$(date +"%m\/%d\/%Y")
+
+PROJ="${NETID}_lab${LAB}_part${PART}"
+
+# Copy template directory
+cp -R rtos-template/ ${PROJ}
+# Rename inside project directory to project name
+mv ${PROJ}/projname ${PROJ}/${PROJ}
+# Rename atsln file to project name
+mv ${PROJ}/projname.atsln ${PROJ}/${PROJ}.atsln
+# Rename main c file to project name
+mv ${PROJ}/${PROJ}/projname.c ${PROJ}/${PROJ}/${PROJ}.c
+# Rename xml file to project name
+mv ${PROJ}/${PROJ}/projname.componentinfo.xml ${PROJ}/${PROJ}/${PROJ}.componentinfo.xml
+# Rename cproj file to project name
+mv ${PROJ}/${PROJ}/projname.cproj ${PROJ}/${PROJ}/${PROJ}.cproj
+
+# Replace projname in files
+find ${PROJ} -type f -exec sed -i "s/\[projname\]/${PROJ}/g" {} +
+# Replace date in files
+find ${PROJ} -type f -exec sed -i "s/\[date\]/${DATE}/g" {} +
+# Replace name in files
+find ${PROJ} -type f -exec sed -i "s/\[name\]/${NAME}/g" {} +
+# Replace email in files
+find ${PROJ} -type f -exec sed -i "s/\[email\]/${EMAIL}/g" {} +
+# Replace netid in files
+find ${PROJ} -type f -exec sed -i "s/\[netid\]/${NETID}/g" {} +
+# Replace lab in files
+find ${PROJ} -type f -exec sed -i "s/\[lab\]/${LAB}/g" {} +
+# Replace part in files
+find ${PROJ} -type f -exec sed -i "s/\[part\]/${PART}/g" {} +
+echo "New Atmel Studio Project: ${PROJ} created!"
