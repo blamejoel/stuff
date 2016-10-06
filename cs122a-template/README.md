@@ -1,8 +1,8 @@
 # Atmel Studio RTOS Template for CS122A
 
 ## Requirements
-Atmel Studio 7
-[Windows Subsystem for Linux](https://msdn.microsoft.com/commandline/wsl/install_guide)
+* Atmel Studio 7 
+* [Windows Subsystem for Linux](https://msdn.microsoft.com/commandline/wsl/install_guide)
 
 ## Prep
 Move or copy the following directories and files to your Atmel Studio 
