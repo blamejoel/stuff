@@ -25,8 +25,7 @@ autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2 commentstrin
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType c setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType json setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType python setlocal commentstring=#\ %s
-filetype indent on
+filetype plugin indent on
 
 " tmux stuff
 " fix for different cursors in insert/visual mode
