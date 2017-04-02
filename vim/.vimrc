@@ -1,12 +1,13 @@
 set background=dark
 set t_Co=256
-"colorscheme PaperColor
-"colorscheme onedark
+" colorscheme PaperColor
+" colorscheme onedark
 colorscheme molokai
-"colorscheme primary
-"colorscheme solarized
+" colorscheme primary
+" colorscheme solarized
 set cursorline
 set colorcolumn=80,120
+set textwidth=80
 set spell
 set spellsuggest=best,10
 set tabstop=4
