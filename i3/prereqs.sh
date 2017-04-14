@@ -8,6 +8,9 @@ mkdir -p ~/Downloads/i3temp/
 echo "Downloading playerctl..."
 wget https://github.com/acrisci/playerctl/releases/download/v0.5.0/playerctl-0.5.0_amd64.deb -O ~/Downloads/i3temp/playerctl.deb
 
+# brightness control
+sudo apt install xbacklight
+
 echo "Installing playerctl..."
 sudo dpkg -i ~/Downloads/i3temp/playerctl.deb
 

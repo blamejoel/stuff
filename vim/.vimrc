@@ -7,7 +7,7 @@ colorscheme molokai
 " colorscheme solarized
 set cursorline
 set colorcolumn=80,120
-set spell
+" set spell
 set spellsuggest=best,10
 set tabstop=4
 set softtabstop=4
@@ -25,7 +25,7 @@ autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2 commentstrin
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType c setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType json setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd BufNew,BufRead *.md setlocal textwidth=80
+autocmd BufNew,BufRead *.md setlocal textwidth=80 spell
 filetype plugin indent on
 
 " tmux stuff

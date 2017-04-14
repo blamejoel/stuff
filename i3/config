@@ -13,7 +13,8 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:System San Francisco Display 10
+font pango:Roboto 11
+# font pango:System San Francisco Display 10
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -37,7 +38,8 @@ bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 # bindsym $mod+d exec dmenu_run
-bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 400 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
+bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 480 -opacity "85" -bw 0 -font "Roboto 20"
+# bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 400 -opacity "85" -color-enabled -bw 0 -fullscreen -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -93,9 +95,9 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-set $workspace1 "1: Chrome "
-set $workspace2 "2: Chats "
-# set $workspace3 "2: Slack "
+set $workspace1 "1: Terminals  "
+set $workspace2 "2: Chrome  "
+# set $workspace3 "2: Slack  "
 set $workspace3 "3"
 set $workspace4 "4"
 set $workspace5 "5"
@@ -103,7 +105,7 @@ set $workspace6 "6"
 set $workspace7 "7"
 set $workspace8 "8"
 set $workspace9 "9"
-set $workspace10 "10: Music "
+set $workspace10 "10: Chat  "
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -130,9 +132,15 @@ bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10
 
 # Assign specific applications to specific workspaces
+# xprop CLASS(STRING) first value is what you need for i3 config instance
 # xprop CLASS(STRING) second value is what you need for i3 config class
-# assign [class="classhere"] $workspace10
-assign [class="Slack"] $workspace2
+# assign [class="Google-chrome"] $workspace2
+# Chrome
+assign [instance="google-chrome"] $workspace2
+# Slack
+assign [instance="crx_ndlpaopaehjllibchpnalfiefofehmdn"] $workspace10
+# Hangouts
+assign [instance="crx_nckgahadagoaajjgafhacjanaoiihapd"] $workspace10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -200,16 +208,16 @@ bar {
 }
 
 # lock screen
-bindsym $mod+shift+x exec i3lock --color "$bg-color"
+bindsym $mod+Shift+x exec i3lock --dpms --color "$bg-color"
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 2 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 2 # decrease screen brightness
 
 # Touchpad controls
 bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
@@ -220,15 +228,42 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
+# Screenshots
+bindsym --release Control+Shift+Print exec gnome-screenshot -a -c
+bindsym --release Control+Print exec gnome-screenshot -w -c
+bindsym --release Print exec gnome-screenshot -c
+
+# External monitor toggle
+bindsym $mod+p exec --no-startup-id /home/joel/utils/ext-display.sh
+
+# Mirror display toggle
+bindsym $mod+Shift+p exec --no-startup-id /home/joel/utils/mirror-display.sh
+
 # Startup programs
-exec google-chrome
-exec slack
+
+# Wifi manager
+exec --no-startup-id nm-applet
+
+# needed for screenshots to clipboard, maybe other stuff too
+exec gnome-settings-daemon
+
+exec caffeine-indicator
 
 # Change wallpaper
 # exec_always feh --bg-scale /home/joel/Pictures/wallpaper.jpg
 
-# Configure multiple monitor setup
-# exec_always [insert arandr script text]
+# exec --no-startup-id i3-msg 'workspace $workspace1; exec i3-sensible-terminal'
+# exec --no-startup-id i3-msg 'workspace $workspace2; exec google-chrome'
+# exec --no-startup-id i3-msg 'workspace $workspace1; exec /opt/google/chrome/google-chrome --profile-directory=Default --app-id=ndlpaopaehjllibchpnalfiefofehmdn'
+exec google-chrome
+exec i3-sensible-terminal
+exec google-chrome --profile-directory=Default --app-id=ndlpaopaehjllibchpnalfiefofehmdn
+# exec --no-startup-id i3-msg 'workspace $workspace2'
+# exec --no-startup-id i3-msg 'workspace $workspace3'
 
 # Enable transparencies
 exec compton -f
+
+# Configure multiple monitor setup
+# exec_always [insert arandr script text]
+
