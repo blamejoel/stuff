@@ -239,10 +239,10 @@ bindsym --release Control+Print exec gnome-screenshot -w -c
 bindsym --release Print exec gnome-screenshot -c
 
 # External monitor toggle
-bindsym $mod+p exec --no-startup-id /home/joel/utils/ext-display.sh
+bindsym $mod+p exec --no-startup-id $HOME/utils/ext-display.sh
 
 # Mirror display toggle
-bindsym $mod+Shift+p exec --no-startup-id /home/joel/utils/mirror-display.sh
+bindsym $mod+Shift+p exec --no-startup-id $HOME/utils/mirror-display.sh
 
 # Startup programs
 
@@ -261,7 +261,7 @@ exec gnome-settings-daemon
 exec caffeine-indicator
 
 # Change wallpaper
-exec_always feh --bg-scale /home/joel/Pictures/Wallpapers/wallpaper.jpg
+exec_always feh --bg-scale $HOME/Pictures/Wallpapers/wallpaper.jpg
 
 # exec --no-startup-id i3-msg 'workspace $workspace1; exec i3-sensible-terminal'
 # exec --no-startup-id i3-msg 'workspace $workspace2; exec google-chrome'
