@@ -39,6 +39,11 @@ bindsym $mod+Shift+q kill
 # start dmenu (a program launcher)
 # bindsym $mod+d exec dmenu_run
 bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 480 -opacity "85" -bw 0 -font "Roboto 20"
+
+# Use desktop names
+# bindsym $mod+d exec rofi -show drun -modi drun -lines 3 -eh 2 -width 100 -padding 480 -opacity "85" -bw 0 -font "Roboto 20"
+
+
 # bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 400 -opacity "85" -color-enabled -bw 0 -fullscreen -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -244,19 +249,26 @@ bindsym $mod+Shift+p exec --no-startup-id /home/joel/utils/mirror-display.sh
 # Wifi manager
 exec --no-startup-id nm-applet
 
+# Bluetooth manager
+exec --no-startup-id blueman-applet
+
+# Redshift
+exec --no-startup-id redshift-gtk
+
 # needed for screenshots to clipboard, maybe other stuff too
 exec gnome-settings-daemon
 
 exec caffeine-indicator
 
 # Change wallpaper
-# exec_always feh --bg-scale /home/joel/Pictures/wallpaper.jpg
+exec_always feh --bg-scale /home/joel/Pictures/Wallpapers/wallpaper.jpg
 
 # exec --no-startup-id i3-msg 'workspace $workspace1; exec i3-sensible-terminal'
 # exec --no-startup-id i3-msg 'workspace $workspace2; exec google-chrome'
 # exec --no-startup-id i3-msg 'workspace $workspace1; exec /opt/google/chrome/google-chrome --profile-directory=Default --app-id=ndlpaopaehjllibchpnalfiefofehmdn'
 exec google-chrome
 exec i3-sensible-terminal
+# Slack Chrome "App"
 exec google-chrome --profile-directory=Default --app-id=ndlpaopaehjllibchpnalfiefofehmdn
 # exec --no-startup-id i3-msg 'workspace $workspace2'
 # exec --no-startup-id i3-msg 'workspace $workspace3'
