@@ -12,3 +12,11 @@ cp ./Xresources ~/.Xresources
 external monitor script
 mkdir -p ~/utils/
 cp ./ext-display.sh ~/utills/ext-display.sh
+
+#TODO: get user from env variables and search and replace in i3/config
+
+disable desktop icons for nautilus
+gsettings set org.gnome.desktop.background show-desktop-icons false
+
+screen tearing on scroll
+https://askubuntu.com/questions/751149/screen-tearing-when-using-i3-none-when-using-unity
