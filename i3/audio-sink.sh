@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 SINK=$(pacmd list-sinks | grep 'name:')
 DEV=bluez
 
