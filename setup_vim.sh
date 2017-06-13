@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 echo "Copying vim plugins and color profiles..."
 cp -r vim/.vim ~/
