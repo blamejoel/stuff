@@ -23,9 +23,10 @@ hi Normal ctermbg=none
 hi CursorLine cterm=underline term=underline
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2 commentstring=<!--%s-->
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType c setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType c,cpp setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType json setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType markdown setlocal textwidth=80 spell
+autocmd FileType tex,plaintex setlocal textwidth=80 spell
 filetype plugin indent on
 
 " tmux stuff
