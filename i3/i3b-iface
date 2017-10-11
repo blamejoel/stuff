@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+IFACE=$1
+IF=/sys/class/net/$IFACE/operstate
+if [[ -e $IF ]]; then 
+    echo $IFACE
+    echo $IFACE
+    echo \#C9C9C9
+fi

@@ -143,7 +143,7 @@ bindsym $mod+Shift+0 move container to workspace $workspace10
 # Chrome
 assign [instance="google-chrome"] $workspace2
 # Slack
-assign [instance="crx_ndlpaopaehjllibchpnalfiefofehmdn"] $workspace10
+assign [instance="crx_fjffhmbndehljmalhncaohgagbjdfhln"] $workspace10
 # Hangouts
 assign [instance="crx_nckgahadagoaajjgafhacjanaoiihapd"] $workspace10
 
@@ -200,6 +200,7 @@ hide_edge_borders both
 # finds out, if available)
 bar {
         # status_command i3status
+        font pango:Roboto, FontAwesome 11
         status_command i3blocks -c ~/.config/i3/i3blocks.conf
         position top
         colors {
@@ -223,7 +224,8 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume $($HOME/
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume $($HOME/utils/audio-sink.sh) -5% 
 # bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5% 
 # mute sound
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle 
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute $($HOME/utils/audio-sink.sh) toggle 
+# bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle 
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
@@ -274,7 +276,7 @@ exec_always feh --bg-scale $HOME/Pictures/Wallpapers/wallpaper.jpg
 exec google-chrome
 exec i3-sensible-terminal
 # Slack Chrome "App"
-exec google-chrome --profile-directory=Default --app-id=ndlpaopaehjllibchpnalfiefofehmdn
+exec google-chrome --profile-directory=Default --app-id=fjffhmbndehljmalhncaohgagbjdfhln
 # exec --no-startup-id i3-msg 'workspace $workspace2'
 # exec --no-startup-id i3-msg 'workspace $workspace3'
 
