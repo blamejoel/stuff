@@ -14,19 +14,21 @@ elif [ "$STATE" == "charging" ]; then
     BATT_STAT="$PERCENT% CHR ($TTF)"
 fi
 
-echo $BATT_STAT
+echo $BATT_STAT # FULL_TEXT
+echo $BATT_STAT # SHORT_TEXT
 
-if [ $PERCENT -lt 20 ]; then
+# COLOR
+if [ "$PERCENT" -lt 20 ]; then
     echo "#FF0000"
-elif [ $PERCENT -lt 40 ]; then
+elif [ "$PERCENT" -lt 40 ]; then
     echo "#FFAE00"
-elif [ $PERCENT -lt 60 ]; then
+elif [ "$PERCENT" -lt 60 ]; then
     echo "#FFF600"
-elif [ $PERCENT -lt 85 ]; then
+elif [ "$PERCENT" -lt 85 ]; then
     echo "#A8FF00"
 fi
 
-if [ $PERCENT -lt 5 ]; then
+if [ "$PERCENT" -lt 5 ]; then
     exit 33
 fi
 
