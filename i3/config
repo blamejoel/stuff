@@ -241,9 +241,14 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Screenshots
-bindsym --release Control+Shift+Print exec gnome-screenshot -a -c
-bindsym --release Control+Print exec gnome-screenshot -w -c
-bindsym --release Print exec gnome-screenshot -c
+# bindsym --release Control+Shift+Print exec gnome-screenshot -a -c
+# bindsym --release Control+Print exec gnome-screenshot -w -c
+# bindsym --release Print exec gnome-screenshot -c
+bindsym --release Control+Shift+Print exec shutter --select
+bindsym --release Control+Print exec shutter --active
+bindsym --release Print exec shutter --full
+# Force shutter dialog to be a floating window
+for_window [class="Shutter" instance="shutter"] floating enable
 
 # External monitor toggle
 bindsym $mod+p exec --no-startup-id $HOME/utils/ext-display.sh
@@ -263,7 +268,7 @@ exec --no-startup-id blueman-applet
 exec --no-startup-id redshift-gtk
 
 # needed for screenshots to clipboard, maybe other stuff too
-exec gnome-settings-daemon
+# exec gnome-settings-daemon
 
 exec caffeine-indicator
 

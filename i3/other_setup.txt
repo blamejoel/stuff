@@ -1,10 +1,11 @@
 brightness controls
-apt install xbacklight
+sudo apt install xbacklight
 cp ./20-intel.conf  /usr/share/X11/xorg.conf.d/
 
 touchpad
-apt install xserver-xorg-input-libinput
-cp ./60-libinput.conf  /usr/share/X11/xorg.conf.d/
+sudo apt remove  xserver-xorg-input-synaptics
+sudo apt install xserver-xorg-input-libinput
+sudo cp ./60-libinput.conf  /usr/share/X11/xorg.conf.d/
 
 rofi themes
 cp ./Xresources ~/.Xresources
@@ -20,3 +21,14 @@ gsettings set org.gnome.desktop.background show-desktop-icons false
 
 screen tearing on scroll
 https://askubuntu.com/questions/751149/screen-tearing-when-using-i3-none-when-using-unity
+
+remove purlpe background color on boot
+edit /usr/share/plymouth/themes/ubuntu-logo/ubuntu-logo.grub
+edit /usr/share/plymouth/themes/ubuntu-logo/ubuntu-logo.script (SetBackground)
+sudo update-grub
+sudo update-initramfs -u
+
+ultra flat icons
+sudo add-apt-repository ppa:noobslab/icons
+sudo apt-get update
+sudo apt-get install ultra-flat-icons
