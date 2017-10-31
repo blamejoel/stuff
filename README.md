@@ -14,3 +14,4 @@ Ex: vim .vimrc file and color scheme.
 * .bashrc - bashrc preferences for UCR CS servers
 * other utils
   * sanitize_cs100_debug_log.sh - a log sanitizing script for cs100 rshell test case recording
+...I searched trying to figure out how to map *all* keybindings to 'dd'.  But it took much time.
