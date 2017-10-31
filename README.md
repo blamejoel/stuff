@@ -2,7 +2,7 @@
 Personal config files that might be useful on remote or otherwise "other"
 machines.  
 
-Ex: vim .vimrc file and color scheme.
+Example: vim .vimrc file and color scheme.
 
 * Vim
   * setup_vim.sh - script to auto copy/merge vimrc, plugins, and color schemes to the home directory
