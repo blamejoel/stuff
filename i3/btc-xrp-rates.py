@@ -18,7 +18,7 @@ try:
     print("BTC: {:.2f}".format(float(btc)), end=' ')
     print("LTC: {:.2f}".format(float(ltc)), end=' ')
     print("ETH: {:.2f}".format(float(eth)), end=' ')
-    print("XRP: {:.5f}".format(float(xrp)), end='')
+    print("XRP: {:.2f}".format(float(xrp)), end='')
 
 except:
     pass
