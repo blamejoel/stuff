@@ -21,10 +21,10 @@ set hlsearch
 syntax enable
 hi Normal ctermbg=none
 hi CursorLine cterm=underline term=underline
-autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2 commentstring=<!--%s-->
+autocmd FileType html,xml setlocal shiftwidth=2 tabstop=2 softtabstop=2 commentstring=<!--%s-->
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType c,cpp setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType json setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType json,yaml setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType markdown setlocal textwidth=80 spell
 autocmd FileType tex,plaintex setlocal textwidth=80 spell
 filetype plugin indent on
@@ -40,3 +40,10 @@ if exists('$ITERM_PROFILE')
         let &t_EI = "\<Esc>]50;CursorShape=0\x7"
     endif
 end
+
+" pathogen package manager
+" execute pathogen#infect()
+
+" go stuff
+let g:go_version_warning = 0
+let g:go_fmt_options = 0
