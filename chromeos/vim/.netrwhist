@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/home/joelgomez3/Desktop/_copy_to_usb/00-run-tweaks-from-usb'
+let g:netrw_dirhist_2='/home/joelgomez3/src/overpack/src/items/__pycache__'
+let g:netrw_dirhist_3='/home/joelgomez3/src/overpack/src/overpack/assets/__pycache__'
