@@ -1,5 +1,5 @@
 # stuff
-Personal config files that might be useful on remote or otherwise "other"
+Config files that might be useful on remote or otherwise "other"
 machines.  
 
 Example: vim .vimrc file and color scheme.
